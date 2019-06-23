@@ -3,6 +3,8 @@
 
 {% block content %}
 
+{% render_table table %}
+
 {% for sample in ngs_in_progress %}
     <div class="sample">
         <h1><a href="{% url 'ngs_sample_in_progress' ordno=sample.ordno %}"> {{ sample.ordno }}</a></h1>

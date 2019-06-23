@@ -13,7 +13,7 @@ def ngs_in_progress(request):
     RequestConfig(request).configure(table)
 # return render(request, 'MI_data/ngs_in_progress.html', {'table': table})
     ngs_in_progress = Ngs_in_progress.objects.all()
-    return render(request, 'MI_data/ngs_in_progress.html', {'ngs_in_progress': ngs_in_progress})
+    return render(request, 'MI_data/ngs_in_progress.html', {'ngs_in_progress': ngs_in_progress, 'table': table})
 
 def ngs_sample_in_progress(request, ordno):
     sample = get_object_or_404(Ngs_in_progress, ordno=ordno)
