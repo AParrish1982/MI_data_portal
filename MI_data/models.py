@@ -1,6 +1,8 @@
 from django.conf import settings
 from django.db import models
 from django.utils import timezone
+import plotly.plotly as py
+import plotly.figure_factory as ff
 
 # Create your models here.
 
@@ -24,7 +26,7 @@ class Ngs_in_progress(models.Model):
     reporting_batch = models.CharField(verbose_name='Reporting batch', max_length=7)
     report_generated = models.DateField(verbose_name='Report Generation date')
     status = models.CharField(verbose_name='Status', max_length=6)
-
+    
     def __str__(self):
         return self.ordno
 
