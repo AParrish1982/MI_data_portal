@@ -1,8 +1,15 @@
 {% extends 'MI_data/base.html' %}
 {% load render_table from django_tables2 %}
+{% load static %}
 
 {% block content %}
-        <div>
-            <h2><a href="{% url 'ngs_in_progress' %}">NGS samples in progress</a>
-        </div>
+
+<p></p>
+<div class="container">
+    <a href="{% url 'ngs_in_progress' %}" class="btn btn-lg btn-primary">
+        <p></p>
+        <img src="{% static 'png/task-8x.png' %}"></img><br/>
+            NGS Samples in progress
+            </a>
+    
 {% endblock %}

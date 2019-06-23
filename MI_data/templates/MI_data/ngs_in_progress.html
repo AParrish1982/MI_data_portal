@@ -2,7 +2,11 @@
 {% load render_table from django_tables2 %}
 
 {% block content %}
-        <div>
-        {% render_table ngs_in_progress %}
-        </div>
+
+{% for sample in ngs_in_progress %}
+    <div class="sample">
+        <h1><a href="{% url 'ngs_sample_in_progress' ordno=sample.ordno %}"> {{ sample.ordno }}</a></h1>
+    </div>
+{% endfor %}
+
 {% endblock %}
