@@ -1,0 +1,28 @@
+{% extends 'MI_data/base.html' %}
+{% load static %}
+
+{% block content %}
+<p></p>
+<form method="post" action="{% url 'login' %}">
+{% csrf_token %}
+
+<link rel="stylesheet" href="{% static 'css/signin.css' %}">
+    
+<body class="text-center">
+    <h1>Exeter MI Data Portal</h1>
+    <form class="form-signin">
+        <img class="mb-4" src="{% static 'png/account-login-8x.png' %}" alt="" width="72" height="72">
+            <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+            
+            <label for="sign-in" class="sr-only">Username</label>
+            <input type="username" id="inputUser" class="form-control" placeholder="Username" required autofocus {{ form.username }}</input>
+            <p></p>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required {{ form.password }}</input>
+            <p></p>
+                    <button class="btn btn-lg btn-primary btn-block" style="background-color: #005EB8" type="submit" type="hidden" name="next" value="{{ next }}">Sign in</button>
+            </form>
+</body>
+
+{% endblock %}
+

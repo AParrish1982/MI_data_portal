@@ -122,3 +122,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 DJANGO_TABLES2_TEMPLATE = 'django_tables2/bootstrap-responsive.html'
+LOGIN_REDIRECT_URL = 'MI_portal'

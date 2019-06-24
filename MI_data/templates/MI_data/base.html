@@ -7,14 +7,14 @@
             <title>Exeter MI data portal</title>
             </head>
     <body>
-        <nav class="navbar navbar-default"; style="background-color: #005EB8";>
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a href="/mi_portal"; style="color:#FFFFFF";><span class="oi oi-home"></span></a>
-                    <h1 class="navbar-brand"; style="color:#FFFFFF";>Exeter MI Data Portal</h1>
-                </div>
-            </div>
+        {% if user.is_authenticated %}
+        <nav class="navbar navbar-expand"; style="background-color: #005EB8";>
+            <h2><a href="/mi_portal"; style="color:#FFFFFF";><span class="oi oi-home"></span></a></h2>
+            <h1 class="navbar-brand"; style="color:#FFFFFF";><pre></pre> Exeter MI Data Portal</h1>
+            <ul class="navbar-nav mr-auto"></ul>
+            <h1 class="navbar-brand"; style="color:#FFFFFF";>{{ user.username }} <a href="{% url 'logout' %}"; style="color:#FFFFFF";><span class="oi oi-account-logout"></span></a></h1>
         </nav>
+        {% endif %}
         <div>
             {% block content %}
             {% endblock %}
